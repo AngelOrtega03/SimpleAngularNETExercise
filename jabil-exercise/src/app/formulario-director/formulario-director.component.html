@@ -1,0 +1,23 @@
+<h2>{{titulo}}</h2>
+
+<form (ngSubmit)="guardarCambios()" [formGroup]="form" class="formulario">
+    <mat-form-field >
+        <mat-label>Nombre</mat-label>
+        <input [formControl]="form.controls.name" matInput>
+    </mat-form-field>
+    <mat-form-field >
+        <mat-label>Edad</mat-label>
+        <input type="number" [formControl]="form.controls.age" matInput>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>¿Activo?</mat-label>
+        <select matNativeControl [formControl]="form.controls.active">
+            <option [value]=true>Si</option>
+            <option [value]=false>No</option>
+        </select>
+    </mat-form-field>
+    <div>
+        <button type="submit" mat-flat-button>Guardar cambios</button>
+        <a mat-stroked-button routerLink="/director">Cancelar</a>
+    </div>
+</form>

@@ -1,0 +1,26 @@
+<h2>{{titulo}}</h2>
+
+<form (submit)="guardarCambios()" [formGroup]="form" class="formulario">
+    <mat-form-field >
+        <mat-label>Nombre</mat-label>
+        <input [formControl]="form.controls.name" matInput>
+    </mat-form-field>
+    <mat-form-field >
+        <mat-label>Genero</mat-label>
+        <input [formControl]="form.controls.gender" matInput>
+    </mat-form-field>
+    <mat-form-field >
+        <mat-label>Duracion en minutos</mat-label>
+        <input type="number" [formControl]="form.controls.duration" matInput>
+    </mat-form-field>
+    <mat-form-field *ngIf="directores?.length">
+        <mat-label>Director</mat-label>
+        <mat-select [formControl]="form.controls.fkDirector">
+            <mat-option *ngFor="let director of directores" [value]="director.pkDirector">{{director.name}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div>
+        <button type="submit" mat-flat-button>Guardar cambios</button>
+        <a mat-stroked-button routerLink="/peliculas">Cancelar</a>
+    </div>
+</form>

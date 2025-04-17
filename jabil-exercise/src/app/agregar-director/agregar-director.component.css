@@ -1,0 +1,9 @@
+a {
+    margin-left: 1rem;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}

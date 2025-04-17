@@ -1,0 +1,24 @@
+<h2>Directores</h2>
+
+<button mat-flat-button routerLink="/director/agregar">
+    Agregar Director
+</button>
+
+@if (directores){
+<table mat-table [dataSource]="directores" class="mat-elevation-z8 indice-elementos">
+    <ng-container matColumnDef="Nombre">
+        <th mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td mat-cell *matCellDef="let director">{{director.name}}</td>
+    </ng-container>
+    <ng-container matColumnDef="Acciones">
+        <th mat-header-cell *matHeaderCellDef>Acciones</th>
+        <td mat-cell *matCellDef="let director">
+            <a mat-flat-button routerLink="/director/editar/{{director.pkDirector}}">Editar</a>
+            <button mat-flat-button color="warn" (click)="borrar(director.pkDirector)">Borrar</button>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="columnasAMostrar"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnasAMostrar"></tr>
+</table>
+}
