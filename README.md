@@ -20,6 +20,7 @@ En este caso, los datos que se manejan son de peliculas y directores.
 ## Instrucciones para correr el programa
 
 ### Pre-requisitos
+- Usar Windows.
 - Instalar el .NET SDK.
 - Instalar el CLI del Entity Framework Core (una vez teniendo instalado el .NET SDK).
 ```
